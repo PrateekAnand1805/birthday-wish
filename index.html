@@ -1,0 +1,287 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Choti Bahan Birthday</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: one long phone-first scroll styled like a Free Fire lobby: steel hangar, fire-gold accent, crate drops for wishes. Single dark look by choice. */
+:root{
+  --bg:#0b0f16;
+  --panel:#141b27;
+  --panel-2:#1b2535;
+  --line:#2a3850;
+  --fg:#f3efe6;
+  --muted:#9fb0c8;
+  --fire:#ff8a1f;
+  --gold:#ffd23f;
+  --ember:#ff4d2e;
+  --display:'Russo One','Arial Black',Impact,sans-serif;
+  --body:'Rajdhani','Trebuchet MS',system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:18px;font-weight:500;line-height:1.5;padding-inline:16px;padding-block:0;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background:
+  radial-gradient(60% 40% at 50% 0%,rgba(255,138,31,.18),transparent 70%),
+  radial-gradient(50% 35% at 100% 60%,rgba(70,110,190,.14),transparent 70%);pointer-events:none;z-index:0}
+main{position:relative;z-index:1;max-width:760px;margin-inline:auto}
+section{padding-block:56px}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance;line-height:1.05;letter-spacing:.01em}
+.tag{font-family:var(--body);font-weight:700;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--fire);margin:0 0 10px}
+p{margin:0}
+canvas#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+
+/* hero */
+.hero{padding-top:36px;text-align:center}
+.hero h1{font-size:clamp(40px,12vw,84px);font-style:italic;transform:skew(-6deg)}
+.hero h1 .l2{display:block;background:linear-gradient(180deg,var(--gold),var(--fire) 60%,var(--ember));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 4px 18px rgba(255,120,30,.35))}
+.hero .sub{color:var(--muted);margin-top:14px;font-size:20px}
+.stage{position:relative;width:min(100%,430px);margin:26px auto 0}
+.stage::before{content:"";position:absolute;inset:8% 4% 0;background:radial-gradient(closest-side,rgba(255,150,40,.45),transparent 75%);filter:blur(24px);z-index:0}
+.stage img{position:relative;z-index:1;display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);
+  -webkit-mask-image:linear-gradient(#000 82%,transparent);mask-image:linear-gradient(#000 82%,transparent)}
+.ready{display:inline-block;margin-top:-6px;position:relative;z-index:2;font-family:var(--display);font-size:26px;font-style:italic;color:#1a1200;background:linear-gradient(180deg,#ffe36a,#ffb21f);border:0;padding:14px 44px;cursor:pointer;clip-path:polygon(6% 0,100% 0,94% 100%,0 100%);box-shadow:0 0 0 0 rgba(255,200,40,.6);animation:pulse 2s infinite}
+.ready:hover{filter:brightness(1.08)}
+.ready:focus-visible,.btn:focus-visible,.crate:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,200,40,.5)}70%{box-shadow:0 0 0 16px rgba(255,200,40,0)}100%{box-shadow:0 0 0 0 rgba(255,200,40,0)}}
+
+/* story */
+.story{display:grid;gap:22px}
+.story h2{font-size:clamp(28px,7vw,44px)}
+.story p{color:#d8e0ee;max-width:60ch}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.chip{background:var(--panel);border:1px solid var(--line);padding:8px 14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:14px;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+.chip b{color:var(--gold)}
+
+/* call */
+.call h2{font-size:clamp(28px,7vw,44px)}
+.call .lead{color:var(--muted);margin-top:10px;max-width:55ch}
+.frames{display:grid;grid-template-columns:1.25fr 1fr;gap:14px;margin-top:26px;align-items:stretch}
+.frame{position:relative;margin:0;min-width:0;border-radius:22px;overflow:hidden;border:2px solid var(--line);background:var(--panel);box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.frame img{display:block;width:100%;height:100%;object-fit:cover}
+.frame.her{transform:rotate(-2deg);border-color:var(--fire)}
+.frame.me{transform:rotate(2.5deg);border-color:var(--gold);align-self:center;aspect-ratio:3/4}
+.frame figcaption{position:absolute;left:10px;bottom:10px;background:rgba(8,12,18,.78);backdrop-filter:blur(4px);padding:4px 12px;border-radius:99px;font-weight:700;font-size:14px;letter-spacing:.1em;text-transform:uppercase}
+.rec{display:inline-flex;align-items:center;gap:8px;margin-top:20px;color:var(--muted);font-weight:600}
+.rec i{width:10px;height:10px;border-radius:50%;background:#2fdc6a;box-shadow:0 0 10px #2fdc6a}
+
+/* cake */
+.cake{text-align:center}
+.cake h2{font-size:clamp(28px,7vw,44px)}
+.cake .lead{color:var(--muted);margin:10px auto 0;max-width:46ch}
+.cakewrap{margin:24px auto 0;width:min(100%,320px)}
+.cakewrap svg{width:100%;height:auto;display:block;overflow:visible}
+.flame{transform-origin:center bottom;animation:flick .5s infinite alternate ease-in-out}
+.flame:nth-of-type(2n){animation-duration:.42s}
+@keyframes flick{from{transform:scale(1,1) rotate(-3deg)}to{transform:scale(.9,1.12) rotate(3deg)}}
+.out .flame{display:none}
+.smoke{opacity:0}
+.out .smoke{opacity:1;animation:rise 1.6s ease-out forwards}
+@keyframes rise{from{transform:translateY(0);opacity:.8}to{transform:translateY(-34px);opacity:0}}
+.btn{margin-top:22px;font-family:var(--display);font-size:18px;letter-spacing:.04em;color:var(--fg);background:var(--panel-2);border:2px solid var(--fire);padding:12px 26px;cursor:pointer;border-radius:4px}
+.btn:hover{background:var(--fire);color:#1a0d00}
+.wish-out{min-height:2.6em;margin-top:16px;font-weight:700;font-size:22px;color:var(--gold)}
+
+/* crates */
+.drops h2{font-size:clamp(28px,7vw,44px)}
+.drops .lead{color:var(--muted);margin-top:10px}
+.crates{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:26px}
+.crate{position:relative;min-width:0;text-align:left;font:inherit;color:inherit;background:var(--panel);border:1px solid var(--line);padding:0;cursor:pointer;min-height:168px;overflow:hidden;border-radius:6px;perspective:800px}
+.crate .shut,.crate .open{position:absolute;inset:0;padding:16px;display:flex;flex-direction:column;justify-content:space-between}
+.crate .shut{background:repeating-linear-gradient(135deg,#1a2233 0 14px,#161e2d 14px 28px);transition:transform .45s ease,opacity .35s ease}
+.crate .shut b{font-family:var(--display);font-weight:400;font-size:15px;color:var(--gold);letter-spacing:.08em}
+.crate .shut span{font-size:14px;color:var(--muted);font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.crate .shut::after{content:"";position:absolute;left:50%;top:44%;width:44px;height:44px;margin:-22px 0 0 -22px;border:3px solid var(--fire);transform:rotate(45deg);opacity:.75}
+.crate .open{background:linear-gradient(160deg,#2a1d0e,#1a1308);opacity:0;transform:scale(.96);transition:opacity .4s ease .1s,transform .4s ease .1s;font-size:18px;line-height:1.35}
+.crate .open em{font-style:normal;font-family:var(--display);font-size:13px;color:var(--fire);letter-spacing:.14em;text-transform:uppercase}
+.crate.is-open{border-color:var(--gold)}
+.crate.is-open .shut{transform:translateY(-100%);opacity:0}
+.crate.is-open .open{opacity:1;transform:none}
+
+/* letter */
+.letter{background:linear-gradient(180deg,var(--panel),var(--panel-2));border:1px solid var(--line);border-left:6px solid var(--fire);padding:28px 22px;border-radius:4px}
+.letter h2{font-size:clamp(26px,6.5vw,38px);margin-bottom:16px}
+.letter p+p{margin-top:14px}
+.letter p{color:#dfe6f2;max-width:58ch}
+.sign{margin-top:20px;font-family:var(--display);font-size:20px;color:var(--gold)}
+.booyah{text-align:center;padding-block:70px 90px}
+.booyah h2{font-size:clamp(54px,18vw,130px);font-style:italic;background:linear-gradient(180deg,var(--gold),var(--ember));-webkit-background-clip:text;background-clip:text;color:transparent;transform:skew(-6deg)}
+.booyah p{color:var(--muted);margin-top:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;font-size:14px}
+
+@media (max-width:520px){
+  body{font-size:17px}
+  section{padding-block:44px}
+  .frames{grid-template-columns:1fr 0.8fr;gap:10px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+
+<canvas id="fx" aria-hidden="true"></canvas>
+<main>
+
+<section class="hero" id="top">
+  <p class="tag">Squad ki sabse choti member</p>
+  <h1>Happy Birthday<span class="l2">Choti Bahan!</span></h1>
+  <p class="sub">Free Fire ke lobby se mili, aur ab real life ki bahan ban gayi.</p>
+  <div class="stage">
+    <img src="lobby.jpg" width="415" height="505" alt="Free Fire lobby me hum dono ke characters saath khade hain">
+  </div>
+  <button class="ready" id="readyBtn" type="button">READY</button>
+</section>
+
+<section class="story">
+  <div>
+    <p class="tag">Shuruaat</p>
+    <h2>Ek lobby, ek invite, ek squad.</h2>
+  </div>
+  <p>Kisi ne socha bhi nahi tha ki ek random match ke baad ka invite itna lamba chalega. Game me tum mili thi, aur dekhte hi dekhte tum meri choti bahan ban gayi. Ab har baar lobby khulta hai to pehle tumhara naam dhoondhta hoon.</p>
+  <p>Aaj tumhara din hai. Aaj koi rank nahi, koi match nahi. Sirf tum, aur tumhare liye ye chhota sa page.</p>
+  <div class="chips">
+    <span class="chip">Squad <b>2</b></span>
+    <span class="chip">Rishta <b>Bhai-Bahan</b></span>
+    <span class="chip">Status <b>Hamesha Online</b></span>
+  </div>
+</section>
+
+<section class="call">
+  <p class="tag">Video call</p>
+  <h2>Game ke bahar bhi saath.</h2>
+  <p class="lead">Screen ke us paar tum, is paar main. Call pe hansi-mazaak hi sabse badi loot hai.</p>
+  <div class="frames">
+    <figure class="frame her"><img src="her.jpg" alt="Video call me meri choti bahan ka chehra"><figcaption>Tum</figcaption></figure>
+    <figure class="frame me"><img src="me.jpg" alt="Video call me mera chehra"><figcaption>Main</figcaption></figure>
+  </div>
+  <p class="rec"><i></i> Call chalu hai, hamesha.</p>
+</section>
+
+<section class="cake">
+  <p class="tag">Birthday time</p>
+  <h2>Candle bujhao, wish maango.</h2>
+  <p class="lead">Dil me wish soch lo, phir button dabao.</p>
+  <div class="cakewrap" id="cake">
+    <svg viewBox="0 0 320 300" role="img" aria-label="Birthday cake with candles">
+      <ellipse cx="160" cy="276" rx="130" ry="14" fill="#000" opacity=".35"/>
+      <rect x="40" y="190" width="240" height="82" rx="10" fill="#7a2a1b"/>
+      <rect x="40" y="190" width="240" height="22" rx="10" fill="#ffd9a8"/>
+      <path d="M40 206q20 20 40 0t40 0 40 0 40 0 40 0 40 0v6H40z" fill="#ffd9a8"/>
+      <rect x="64" y="130" width="192" height="64" rx="10" fill="#ff8a1f"/>
+      <path d="M64 146q16 18 32 0t32 0 32 0 32 0 32 0 32 0v-4H64z" fill="#fff1d6"/>
+      <circle cx="104" cy="170" r="6" fill="#ffd23f"/><circle cx="160" cy="176" r="6" fill="#ff4d2e"/><circle cx="216" cy="170" r="6" fill="#ffd23f"/>
+      <g>
+        <rect x="104" y="92" width="10" height="40" rx="3" fill="#6fb6ff"/>
+        <rect x="155" y="84" width="10" height="48" rx="3" fill="#ff6fa8"/>
+        <rect x="206" y="92" width="10" height="40" rx="3" fill="#7ff0b0"/>
+        <path class="flame" d="M109 72c8 8 8 16 0 20-8-4-8-12 0-20z" fill="#ffd23f"/>
+        <path class="flame" d="M160 64c8 8 8 16 0 20-8-4-8-12 0-20z" fill="#ffb21f"/>
+        <path class="flame" d="M211 72c8 8 8 16 0 20-8-4-8-12 0-20z" fill="#ffd23f"/>
+        <g class="smoke" fill="none" stroke="#9fb0c8" stroke-width="3" stroke-linecap="round">
+          <path d="M109 88q-6-10 0-18"/><path d="M160 80q-6-10 0-18"/><path d="M211 88q-6-10 0-18"/>
+        </g>
+      </g>
+    </svg>
+  </div>
+  <button class="btn" id="blowBtn" type="button">Candle bujhao</button>
+  <p class="wish-out" id="wishOut" aria-live="polite"></p>
+</section>
+
+<section class="drops">
+  <p class="tag">Airdrop</p>
+  <h2>Tumhare liye 6 crates.</h2>
+  <p class="lead">Har crate ko tap karo. Andar ek wish hai.</p>
+  <div class="crates" id="crates">
+    <button class="crate" type="button" aria-expanded="false"><div class="shut"><b>CRATE 1</b><span>Tap karo</span></div><div class="open"><em>Wish</em>Tumhari hansi kabhi low health na ho.</div></button>
+    <button class="crate" type="button" aria-expanded="false"><div class="shut"><b>CRATE 2</b><span>Tap karo</span></div><div class="open"><em>Wish</em>Padhai, game, zindagi, har jagah Booyah mile.</div></button>
+    <button class="crate" type="button" aria-expanded="false"><div class="shut"><b>CRATE 3</b><span>Tap karo</span></div><div class="open"><em>Wish</em>Jab bhi koi pareshani aaye, bhai ka squad ready hai.</div></button>
+    <button class="crate" type="button" aria-expanded="false"><div class="shut"><b>CRATE 4</b><span>Tap karo</span></div><div class="open"><em>Wish</em>Saare sapne Heroic rank tak pahunche.</div></button>
+    <button class="crate" type="button" aria-expanded="false"><div class="shut"><b>CRATE 5</b><span>Tap karo</span></div><div class="open"><em>Wish</em>Itni khushiyan mile ki inventory me jagah kam pad jaye.</div></button>
+    <button class="crate" type="button" aria-expanded="false"><div class="shut"><b>CRATE 6</b><span>Tap karo</span></div><div class="open"><em>Wish</em>Aur haan, mujhe bhi kabhi kabhi match jeetne dena.</div></button>
+  </div>
+</section>
+
+<section>
+  <div class="letter">
+    <p class="tag">Bhai ka message</p>
+    <h2>Meri choti bahan ke naam.</h2>
+    <p>Online mili thi, par rishta asli nikla. Tumhare saath baat karke, game khel ke aur call pe hans ke mujhe hamesha achha laga hai.</p>
+    <p>Aaj tumhara birthday hai, to bas itna kehna hai: tum jaisi ho waisi hi rehna. Khush rehna, safe rehna, aur jab bhi mann kare, lobby me aa jana. Main wahin milunga.</p>
+    <p class="sign">Tumhara bhai</p>
+  </div>
+</section>
+
+<section class="booyah">
+  <h2>BOOYAH!</h2>
+  <p>Happy Birthday, Choti Bahan</p>
+</section>
+
+</main>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cv = document.getElementById('fx'), ctx = cv.getContext('2d');
+  var W=0,H=0,dpr=Math.min(window.devicePixelRatio||1,2),parts=[],raf=0;
+  function size(){W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+  size(); addEventListener('resize',size);
+  var cols=['#ffd23f','#ff8a1f','#ff4d2e','#6fb6ff','#ff6fa8','#7ff0b0','#f3efe6'];
+  function burst(n,x,y){
+    if(reduce) return;
+    for(var i=0;i<n;i++){
+      var a=Math.random()*Math.PI*2, s=4+Math.random()*9;
+      parts.push({x:x,y:y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-6,w:6+Math.random()*7,h:4+Math.random()*6,r:Math.random()*6,vr:(Math.random()-.5)*.4,c:cols[i%cols.length],life:140+Math.random()*80});
+    }
+    if(!raf) raf=requestAnimationFrame(tick);
+  }
+  function rain(){
+    if(reduce) return;
+    for(var i=0;i<90;i++){
+      parts.push({x:Math.random()*W,y:-20-Math.random()*H*.5,vx:(Math.random()-.5)*2,vy:2+Math.random()*3,w:6+Math.random()*6,h:4+Math.random()*5,r:Math.random()*6,vr:(Math.random()-.5)*.3,c:cols[i%cols.length],life:260,g:.02});
+    }
+    if(!raf) raf=requestAnimationFrame(tick);
+  }
+  function tick(){
+    ctx.clearRect(0,0,W,H);
+    for(var i=parts.length-1;i>=0;i--){
+      var p=parts[i];
+      p.vy+=(p.g===undefined?.28:p.g); p.vx*=.985; p.x+=p.vx; p.y+=p.vy; p.r+=p.vr; p.life--;
+      if(p.life<=0||p.y>H+30){parts.splice(i,1);continue}
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r);ctx.globalAlpha=Math.min(1,p.life/40);
+      ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();
+    }
+    raf = parts.length ? requestAnimationFrame(tick) : 0;
+    if(!parts.length) ctx.clearRect(0,0,W,H);
+  }
+
+  document.getElementById('readyBtn').addEventListener('click',function(e){
+    var r=e.currentTarget.getBoundingClientRect();
+    burst(120,r.left+r.width/2,r.top+r.height/2);
+    setTimeout(rain,250);
+  });
+
+  var cake=document.getElementById('cake'), blow=document.getElementById('blowBtn'), out=document.getElementById('wishOut');
+  blow.addEventListener('click',function(){
+    var isOut=cake.classList.toggle('out');
+    if(isOut){
+      blow.textContent='Dobara jalao';
+      out.textContent='Wish pakki. Ab dekhna sach hogi!';
+      var r=cake.getBoundingClientRect();
+      burst(140,r.left+r.width/2,r.top+r.height*.35);
+    }else{
+      blow.textContent='Candle bujhao';
+      out.textContent='';
+    }
+  });
+
+  document.querySelectorAll('.crate').forEach(function(c){
+    c.addEventListener('click',function(){
+      var o=c.classList.toggle('is-open');
+      c.setAttribute('aria-expanded',o?'true':'false');
+      if(o){var r=c.getBoundingClientRect();burst(40,r.left+r.width/2,r.top+r.height/2)}
+    });
+  });
+})();
+</script>
+
+</body></html>
